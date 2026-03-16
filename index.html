@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relocation Process Flow</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"></div>
+  <header class="hero shell">
+    <div class="hero-copy">
+      <p class="eyebrow">Warehouse Relocation Command View</p>
+      <h1>Farukh Nagar to Silani Warehouse Process Flow</h1>
+      <p class="hero-text">
+        Interactive control view for the 15-day warehouse move. It combines the transfer flow,
+        exception handling, daily operating rhythm, and execution controls into one floor-ready app.
+      </p>
+      <div class="hero-actions">
+        <a class="action primary" href="#process-flow">Open Process Flow</a>
+        <a class="action secondary" href="#daily-model">See Daily Model</a>
+      </div>
+    </div>
+    <aside class="hero-panel">
+      <div class="metric-grid">
+        <article class="metric-card accent-navy">
+          <span class="metric-label">Move Window</span>
+          <strong>15 Days</strong>
+          <small>March 16 to March 30</small>
+        </article>
+        <article class="metric-card accent-amber">
+          <span class="metric-label">Relocation Target</span>
+          <strong>9,000 CBM</strong>
+          <small>Approved moveable volume</small>
+        </article>
+        <article class="metric-card accent-teal">
+          <span class="metric-label">Fleet</span>
+          <strong>10 Trucks</strong>
+          <small>40 ft, 50 CBM each</small>
+        </article>
+        <article class="metric-card accent-rust">
+          <span class="metric-label">Cycle Time</span>
+          <strong>12 Hours</strong>
+          <small>Load, transit, unload, return, rest</small>
+        </article>
+      </div>
+    </aside>
+  </header>
+
+  <main class="shell">
+    <section class="panel split-panel" id="plan-basis">
+      <div>
+        <p class="section-kicker">Plan Basis</p>
+        <h2>Industry-standard relocation logic</h2>
+        <p class="section-text">
+          The move is structured as a wave-based inter-facility transfer into one destination warehouse. Phase 1 prioritizes Edel movement,
+          Phase 2 clears non-movers, and Phase 3 handles the rest of inventory under manifest, scan, seal, and daily reconciliation control.
+        </p>
+      </div>
+      <div class="basis-grid">
+        <article>
+          <h3>Phase 1</h3>
+          <p>Edel movement first, with route-wise staging and strict load control at source and destination.</p>
+        </article>
+        <article>
+          <h3>Phase 2</h3>
+          <p>Non-mover movement next, freeing static stock from source reserve and bulk storage areas.</p>
+        </article>
+        <article>
+          <h3>Phase 3</h3>
+          <p>Move the remaining inventory with final balancing, cutover, residual sweep, and reconciliation.</p>
+        </article>
+        <article>
+          <h3>Control Rule</h3>
+          <p>No truck departs without scan-complete manifest, seal number, dock release, and destination appointment.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="process-flow">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Interactive Flow</p>
+          <h2>Execution map</h2>
+        </div>
+        <div class="tab-bar" role="tablist" aria-label="Process Views">
+          <button class="tab active" data-view="transfer" role="tab" aria-selected="true">Transfer Flow</button>
+          <button class="tab" data-view="exception" role="tab" aria-selected="false">Exception Flow</button>
+          <button class="tab" data-view="controls" role="tab" aria-selected="false">Day Controls</button>
+        </div>
+      </div>
+      <div class="lane-legend" id="lane-legend"></div>
+      <div id="flow-board" class="flow-board" aria-live="polite"></div>
+    </section>
+
+    <section class="panel" id="daily-model">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">Daily Model</p>
+          <h2>Phase pacing and trip pattern</h2>
+        </div>
+      </div>
+      <div class="daily-summary" id="daily-summary"></div>
+      <div class="phase-grid" id="phase-grid"></div>
+      <div class="cycle-strip" id="cycle-strip"></div>
+    </section>
+
+    <section class="panel dual-band">
+      <div class="subpanel">
+        <p class="section-kicker">Command Rhythm</p>
+        <h2>Daily control tower cadence</h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+      <div class="subpanel">
+        <p class="section-kicker">Readiness</p>
+        <h2>Go-live gate</h2>
+        <ul class="checklist" id="readiness-list"></ul>
+      </div>
+    </section>
+
+    <section class="panel dual-band">
+      <div class="subpanel">
+        <p class="section-kicker">Execution Controls</p>
+        <h2>Non-negotiables</h2>
+        <div class="control-list" id="control-list"></div>
+      </div>
+      <div class="subpanel">
+        <p class="section-kicker">KPI View</p>
+        <h2>What ops must report daily</h2>
+        <div class="kpi-list" id="kpi-list"></div>
+      </div>
+    </section>
+
+    <section class="panel resource-panel">
+      <div>
+        <p class="section-kicker">Project Artifacts</p>
+        <h2>Open supporting files</h2>
+        <p class="section-text">
+          The web app sits on top of the detailed planning pack already generated for this move.
+        </p>
+      </div>
+      <div class="resource-links">
+        <a href="../../spreadsheet/farukh_nagar_to_silani_shona_relocation_plan.xlsx">Relocation Excel Plan</a>
+        <a href="../../ppt/farukh_nagar_to_silani_relocation_plan_v3.pptx">Relocation PPT Deck</a>
+        <a href="../../process_flow/farukh_nagar_to_silani_shona_process_flow.md">Process Flow Markdown</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p>Built for floor execution, dock control, and relocation governance.</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
